@@ -21,7 +21,7 @@ $(document).ready(function() {
    
     setInterval(function(){
         Shoutbox.get();
-    }, 500);
+    }, 1000);
     
     let Shoutbox = {
         get: function() {

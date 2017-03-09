@@ -25,5 +25,8 @@
         </main>
         
         <script src="script.js"></script>
+        <noscript>
+            alert("Please enable JavaScript");
+        </noscript>
     </body> 
 </html>

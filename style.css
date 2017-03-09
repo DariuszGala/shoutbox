@@ -70,7 +70,7 @@ main {
     padding-left: 2rem;
     padding-right: 2rem;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: space-between;
 }
 
@@ -80,9 +80,9 @@ main {
     overflow: -moz-scrollbars-none;
     width: 100%;
     overflow-y:scroll;
-    height: 55rem;
     border-bottom: 1px solid #b9b9b9;
     font-weight: 400px;
+    flex: 3 auto;
 }
 
 .content::-webkit-scrollbar { width: 0 !important }
@@ -108,6 +108,9 @@ li p:nth-child(2) {
 }
 li p:last-child {
     width: 100%;
+}
+
+.message {
 }
 
 form {
@@ -160,11 +163,8 @@ input:focus, textarea:focus{
     html {
         font-size: 8px;
     }
-    
-    
     .content {
         font-size: 2em;
-        height: 36rem;
     }
     input, textarea{ 
         font-size: 1.5em;
