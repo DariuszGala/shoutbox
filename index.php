@@ -12,7 +12,7 @@
         <header>Welcome in the chat!</header>
         
         <main>
-            <ul class="content">
+            <ul class="content" id="content">
                 
             </ul>
             <div clas="message">

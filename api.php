@@ -10,7 +10,7 @@
     switch($method) {
         case 'GET':
             $comments = $repo->query()
-                ->orderBy('dateAdded DESC')
+                ->orderBy('dateAdded ASC')
                 ->limit(10,0)
                 ->execute();
             $array = [];

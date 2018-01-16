@@ -1,28 +1,5 @@
 $(document).ready(function() {
-    document.addEventListener('keydown', function(event) {
-        if(event.keyCode == 115) Shoutbox.del();
-    });
-
-    var canSend = true;
-    
-    $('form').on('submit', function(e) {
-        e.preventDefault();
-        if(canSend) {
-            Shoutbox.post($(this));
-            canSend = false;
-        } else {
-            alert('Please wait 5s');
-        };
-        $('textarea').val("");
-        setTimeout(function() {
-            canSend = true;
-        }, 5000);         
-     });  
-   
-    setInterval(function(){
-        Shoutbox.get();
-    }, 1000);
-    
+    var content = document.getElementById('content');
     let Shoutbox = {
         get: function() {
             $.ajax({
@@ -41,6 +18,7 @@ $(document).ready(function() {
                     });
                     document.querySelector(".content").innerHTML = '';
                     document.querySelector(".content").appendChild(fragment);
+                    content.scrollTop = content.scrollHeight;
                 }
             });
         },
@@ -61,4 +39,30 @@ $(document).ready(function() {
             });
         }
     }; 
+    
+    document.addEventListener('keydown', function(event) {
+        if(event.keyCode == 115) Shoutbox.del();
+    });
+
+    var canSend = true;
+    
+    $('form').on('submit', function(e) {
+        e.preventDefault();
+        if(canSend) {
+            Shoutbox.post($(this));
+            canSend = false;
+        } else {
+            alert('Please wait 5s');
+        };
+        $('textarea').val("");
+        setTimeout(function() {
+            canSend = true;
+        }, 5000);         
+     });  
+   
+        
+    setInterval(function(){
+        Shoutbox.get();
+    }, 1000);
+    
 });
